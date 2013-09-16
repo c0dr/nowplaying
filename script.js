@@ -23,6 +23,7 @@ var target = document.getElementById('spinner');
 var spinner = new Spinner(opts).spin(target);
 
 function loadData() {
+	
 	$.ajax({
   			type: "GET",
   			url: "data.php",
