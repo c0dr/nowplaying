@@ -23,14 +23,12 @@ var target = document.getElementById('spinner');
 var spinner = new Spinner(opts).spin(target);
 
 function loadData() {
-	
 	$.ajax({
   			type: "GET",
-  			url: "data2.php",
+  			url: "data.php",
 			}).success(function(result) {
 				data = $.parseJSON(result);
 				
-<<<<<<< HEAD
 				//cache variables to speed up.
 				var artist = data.artist[0];
 				var title = data.title[0];
@@ -43,21 +41,6 @@ function loadData() {
 				$('.cover').css('background', 'url(' + data.cover + ')');
 				$('#cover').attr('src', data.cover);
 				$('.twitter').attr('href', 'https://twitter.com/intent/tweet?hashtags=nowplaying&text=' + encodeURIComponent(artist + ' - ' + title));
-=======
-				$('.title').text(data.title[0]);
-				$('.artist').text(data.artist[0]);
-				$('#type').text(data.type);
-				$('#spotify').attr('href', data.spotify);
-				$('#overlay').fadeOut();
-				
-				if(data.cover instanceof Object == false) {
-					$('.cover').css('background', 'url(' + data.cover + ')');
-					$('#cover').attr('src', data.cover);
-				} else {
-					$('.cover').css('background', 'url(' + data.cover[0] + ')');
-					$('#cover').attr('src', data.cover[0]);
-				}
->>>>>>> e4a2d8e99a60d3ea8cadab8d3f9b79182ac32dd2
 					
 			});	
 
