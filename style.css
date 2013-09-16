@@ -125,7 +125,6 @@ h4 {
 	text-decoration: none;
 	padding: 5px;
 }
-
 #overlay {
     position: fixed;
     top: 0;
@@ -141,4 +140,29 @@ h4 {
     color: white;
     text-align:center;
     padding-top: 10%;
+}
+
+.twitter{
+	        position:relative;
+        background-color:#f8f8f8;
+        background-image:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#dedede));
+        background-image:-moz-linear-gradient(top, #fff, #dedede);
+        background-image:-o-linear-gradient(top, #fff, #dedede);
+        background-image:-ms-linear-gradient(top, #fff, #dedede);
+        background-image:linear-gradient(top, #fff, #dedede);
+        border:#ccc solid 1px;
+        -moz-border-radius:3px;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+        color:#333;
+        font-weight:bold;
+        text-shadow:0 1px 0 rgba(255, 255, 255, .5);
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -o-user-select:none;
+        user-select:none;
+        cursor:pointer;
+        height:18px;
+        max-width:98%;
+        overflow:hidden;
 }

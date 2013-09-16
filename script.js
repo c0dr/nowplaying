@@ -30,13 +30,19 @@ function loadData() {
 			}).success(function(result) {
 				data = $.parseJSON(result);
 				
-				$('.title').text(data.title[0]);
-				$('.artist').text(data.artist[0]);
-				$('.cover').css('background', 'url(' + data.cover[0] + ')');
-				$('#cover').attr('src', data.cover[0]);
+				//cache variables to speed up.
+				var artist = data.artist[0];
+				var title = data.title[0];
+				
+				$('.title').text(title);
+				$('.artist').text(artist);
 				$('#type').text(data.type);
 				$('#spotify').attr('href', data.spotify);
 				$('#overlay').fadeOut();
+				$('.cover').css('background', 'url(' + data.cover + ')');
+				$('#cover').attr('src', data.cover);
+				$('.twitter').attr('href', 'https://twitter.com/intent/tweet?hashtags=nowplaying&text=' + encodeURIComponent(artist + ' - ' + title));
+					
 			});	
 
 }

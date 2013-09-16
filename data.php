@@ -27,23 +27,21 @@ if ($scrobbler_xml = file_get_contents($scrobbler_url)) {
     //echo the artist and track name  
     $data["artist"] = $track->artist;
     $data["title"] = $track->name;  
-    //$data["cover"] = $track->image[3];
-        
-    
+           
     //Search for the track on spotify    
-    $strack = Spotify::searchTrack($track->name . ' - ' . $track->artist);
+    $track = Spotify::searchTrack($track->name . ' - ' . $track->artist);
     
     // Receive the Spotify URI for the first track
     // Please note, that this is not 100% accurate
-    $uri = Spotify::getUri($strack);
+    $uri = Spotify::getUri($track);
     $data["spotify"] = $uri;
+    
+    //Get cover from spotify
+   	$spotify = file_get_contents("http://embed.spotify.com/oembed/?url=".$uri);
+	$cover = json_decode($spotify);
+	$data["cover"] = $cover->thumbnail_url;
         
-    //If last.fm has no cover, ask deezer    
-	if(strpos($data["cover"], 'http://') === false) {
-    	$deezer = file_get_contents("http://api.deezer.com/search?q=".urlencode($track->artist." - ".$track->album));
-	  	$cover = json_decode($deezer);
-		$data["cover"] = $cover->data[0]->album->cover;
-	}
+ 
 
     echo json_encode($data);
     
