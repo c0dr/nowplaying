@@ -25,9 +25,6 @@
                 <div id="right">
                     <h2 class="title"></h2>
                     <h4 class="artist"></h4>
-                    <a class="btn" id="spotify" href="">Play on Spotify</a><br><br>
-                   	<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-					<p><a class="btn twitter" href="https://twitter.com/intent/tweet?text=&hashtags=nowplaying"><img src="https://dev.twitter.com/sites/default/files/images_documentation/bird_blue_16.png"> Tweet</a></p>
                 </div>
             </div>
         </div>

@@ -27,17 +27,15 @@ function loadData() {
 	$.ajax({
   			type: "GET",
   			url: "data.php",
-			}).success(function(result) {
-				data = $.parseJSON(result);
+			}).success(function(data) {
 				
 				//cache variables to speed up.
-				var artist = data.artist[0];
-				var title = data.title[0];
+				var artist = data.artist;
+				var title = data.title;
 				
 				$('.title').text(title);
 				$('.artist').text(artist);
 				$('#type').text(data.type);
-				$('#spotify').attr('href', data.spotify);
 				$('#overlay').fadeOut();
 				$('.cover').css('background', 'url(' + data.cover + ')');
 				$('#cover').attr('src', data.cover);
