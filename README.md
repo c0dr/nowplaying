@@ -12,7 +12,7 @@ Clone, change the username in data.php line 4 and you are ready to go :)
 
 #License#
 
-Licensed under WTFPL.
+Licensed under MIT.
 
 Attribution highly appreciated.
 
